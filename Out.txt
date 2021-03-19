@@ -1,0 +1,5 @@
+Container contains 2 elements.
+Author's name: hello all;
+Aphorism: goodbay everyone.
+Ñountry: good day;
+Proverb: katya.
