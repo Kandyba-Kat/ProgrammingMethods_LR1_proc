@@ -14,4 +14,3 @@ namespace type_phrases {
 	void aphorism_Output(struct aphorism* aphorism, ofstream& ofst);
 } // end type_phrases namespace
 #endif // APHORISM_H
-

@@ -22,6 +22,12 @@ namespace type_phrases {
 			getline(ifst, newObj->content);
 			newObj->key = phrase::type::PROVERB;
 			break;
+		case 3:
+			newObj = new phrase;
+			newObj->phrase = riddle_Input(ifst);
+			getline(ifst, newObj->content);
+			newObj->key = phrase::type::RIDDLE;
+			break;
 		default:
 			cout << "There are no such type of phrases!" << endl;
 			return 0;
@@ -38,6 +44,11 @@ namespace type_phrases {
 		else if (phrase->key == phrase::type::PROVERB) {
 			proverb_Output((proverb*)phrase->phrase, ofst);
 			ofst << "Proverb: " << phrase->content << "." << endl;
+			return true;
+		}
+		else if (phrase->key == phrase::type::RIDDLE) {
+			riddle_Output((riddle*)phrase->phrase, ofst);
+			ofst << "Riddle: " << phrase->content << "." << endl;
 			return true;
 		}
 		else {

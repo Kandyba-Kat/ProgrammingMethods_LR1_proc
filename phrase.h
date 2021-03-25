@@ -4,12 +4,14 @@
 #include <string>
 #include "aphorism.h"
 #include "proverb.h"
+#include "riddle.h"
+
 using namespace std;
 
 namespace type_phrases {
 
 	struct phrase {
-		enum type { APHORISM, PROVERB };
+		enum type { APHORISM, PROVERB, RIDDLE };
 		type key;
 		string content;
 
@@ -20,4 +22,3 @@ namespace type_phrases {
 	bool phrase_Output(struct phrase* phrase, ofstream& ofst);
 } // end type_phrases namespace
 #endif // PHRASE_H
-
