@@ -7,12 +7,12 @@
 using namespace std;
 
 namespace type_phrases {
-
+	// структура, обощающа€ все имеющиес€ изречени€
 	struct phrase {
 		enum type { APHORISM, PROVERB };
 		type key;
 		string content;
-
+		int eval;
 		void* phrase;
 	};
 

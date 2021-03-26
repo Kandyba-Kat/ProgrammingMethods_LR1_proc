@@ -6,20 +6,26 @@ namespace type_phrases {
 
 	phrase* phrase_Input(ifstream& ifst) {
 		phrase* newObj;
+		string ev;
 		string k;
 		getline(ifst, k);
+		if (k == "") return 0;
 		switch (atoi(k.c_str()))
 		{
 		case 1:
 			newObj = new phrase;
 			newObj->phrase = aphorism_Input(ifst);
 			getline(ifst, newObj->content);
+			getline(ifst, ev);
+			newObj->eval = stoi(ev);
 			newObj->key = phrase::type::APHORISM;
 			break;
 		case 2:
 			newObj = new phrase;
 			newObj->phrase = proverb_Input(ifst);
 			getline(ifst, newObj->content);
+			getline(ifst, ev);
+			newObj->eval = stoi(ev);
 			newObj->key = phrase::type::PROVERB;
 			break;
 		default:
@@ -32,12 +38,12 @@ namespace type_phrases {
 	bool phrase_Output(struct phrase* phrase, ofstream& ofst) {
 		if (phrase->key == phrase::type::APHORISM) {
 			aphorism_Output((aphorism*)phrase->phrase, ofst);
-			ofst << "Aphorism: " << phrase->content << "." << endl;
+			ofst << "Aphorism: " << phrase->content << ";\n" << "Evaluetion: " << phrase->eval << "." << endl;
 			return true;
 		}
 		else if (phrase->key == phrase::type::PROVERB) {
 			proverb_Output((proverb*)phrase->phrase, ofst);
-			ofst << "Proverb: " << phrase->content << "." << endl;
+			ofst << "Proverb: " << phrase->content << ";\n" << "Evaluetion: " << phrase->eval << "." << endl;
 			return true;
 		}
 		else {

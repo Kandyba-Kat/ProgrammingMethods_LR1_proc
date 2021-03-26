@@ -8,7 +8,7 @@ using namespace type_phrases;
 int main(int argc, char const *argv[])
 {
     if (argc != 3) {
-        cout << "Incorrect command line!"
+        cout << "Incorrect command line!\n"
              << "Waited: command infile outfile" << endl;
         exit(1);
     }
