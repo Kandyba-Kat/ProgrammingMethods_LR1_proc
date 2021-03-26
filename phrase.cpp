@@ -32,17 +32,31 @@ namespace type_phrases {
 	bool phrase_Output(struct phrase* phrase, ofstream& ofst) {
 		if (phrase->key == phrase::type::APHORISM) {
 			aphorism_Output((aphorism*)phrase->phrase, ofst);
-			ofst << "Aphorism: " << phrase->content << "." << endl;
+			ofst << "Aphorism: " << phrase->content << endl;
+
 			return true;
 		}
 		else if (phrase->key == phrase::type::PROVERB) {
 			proverb_Output((proverb*)phrase->phrase, ofst);
-			ofst << "Proverb: " << phrase->content << "." << endl;
+			ofst << "Proverb: " << phrase->content << endl;
 			return true;
 		}
 		else {
 			ofst << "Incorrect phrase!" << endl;
 			return false;
 		}
+	}
+
+	int num_punct_marks(struct phrase* phrase) {
+		string punctM = ".,;:\"!?()-";
+		int cnt = 0;
+		for (int i = 0; i < phrase->content.length(); i++) {
+			for (int j = 0; j < punctM.length(); j++) {
+				if (phrase->content[i] == punctM[j]) {
+					cnt++;
+				}
+			}
+		}
+		return cnt;
 	}
 }

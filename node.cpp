@@ -37,6 +37,10 @@ namespace type_phrases {
 			cout << "Cannot to output phrase!" << endl;
 			return false;
 		}
-		return true;
+		else {
+			ofst << "Number of punctuation marks: " << num_punct_marks(currentNode->info) << "." << endl;
+			return true;
+		}
+		
 	}
 }
