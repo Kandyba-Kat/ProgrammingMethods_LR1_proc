@@ -145,6 +145,7 @@
     <ClCompile Include="node.cpp" />
     <ClCompile Include="phrase.cpp" />
     <ClCompile Include="proverb.cpp" />
+    <ClCompile Include="punctuation_marks.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="aphorism.h" />

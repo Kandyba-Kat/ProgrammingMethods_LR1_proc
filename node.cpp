@@ -5,6 +5,8 @@
 #include "container.h"
 
 namespace type_phrases {
+	// сигнатура
+	int num_punct_marks(struct phrase* phrase);
 
 	bool node_Add(struct container* currentList, ifstream& ifst) {
 		struct node* newNode = new node;

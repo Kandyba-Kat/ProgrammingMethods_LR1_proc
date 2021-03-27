@@ -18,7 +18,6 @@ namespace type_phrases {
 
 	phrase* phrase_Input(ifstream& ifst);
 	bool phrase_Output(struct phrase* phrase, ofstream& ofst);
-	int num_punct_marks(struct phrase* phrase);
 } // end type_phrases namespace
 #endif // PHRASE_H
 
