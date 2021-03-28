@@ -1,9 +1,4 @@
-﻿  main.cpp
-  node.cpp
-  phrase.cpp
-  punctuation_marks.cpp
-C:\Users\Katya\Desktop\Study\Технологии и методы программирования\LR1\ProgrammingMethods_proc\ProgrammingMethods_LR1_proc\punctuation_marks.cpp(7,21): warning C4018: <: несоответствие типов со знаком и без знака
-C:\Users\Katya\Desktop\Study\Технологии и методы программирования\LR1\ProgrammingMethods_proc\ProgrammingMethods_LR1_proc\punctuation_marks.cpp(8,22): warning C4018: <: несоответствие типов со знаком и без знака
+﻿  node.cpp
+  sort.cpp
   Создание кода...
-  LINK : не найден или не выполнена сборка C:\Users\Katya\Desktop\Study\Технологии и методы программирования\LR1\ProgrammingMethods_proc\Debug\ProgrammingMethods_LR1_proc.exe при последней инкрементной компоновке; выполняется полная компоновка
   ProgrammingMethods_LR1_proc.vcxproj -> C:\Users\Katya\Desktop\Study\Технологии и методы программирования\LR1\ProgrammingMethods_proc\Debug\ProgrammingMethods_LR1_proc.exe

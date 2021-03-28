@@ -1,6 +1,7 @@
 ﻿#include <iostream>
 #include <fstream>
 #include "container.h"
+#include "sort.h"
 
 using namespace std;
 using namespace type_phrases;
@@ -26,6 +27,8 @@ int main(int argc, char const *argv[])
     container_Init(c);
     container_Fill(c, ifst);
     cout << "Filled container" << endl;
+    sort(c->size, c->head);
+    cout << "Sorted container" << endl;
     container_Output(c, ofst);
     container_Clear(c);
     cout << "Empty container" << endl;
