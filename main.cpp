@@ -4,6 +4,10 @@
 #include "sort.h"
 
 using namespace std;
+namespace type_phrases {
+    // Сигнатуры требуемых функций
+    void aphorism_Out(struct container* list, ofstream& ofst);
+}
 using namespace type_phrases;
 
 int main(int argc, char const *argv[])
@@ -30,6 +34,9 @@ int main(int argc, char const *argv[])
     sort(c->size, c->head);
     cout << "Sorted container" << endl;
     container_Output(c, ofst);
+    ofst << endl;
+    aphorism_Out(c, ofst);
+    cout << "Output of aphorisms only" << endl;
     container_Clear(c);
     cout << "Empty container" << endl;
     container_Output(c, ofst);
