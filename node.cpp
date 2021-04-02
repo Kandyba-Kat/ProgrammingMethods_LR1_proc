@@ -5,6 +5,8 @@
 #include "container.h"
 
 namespace type_phrases {
+	// сигнатура
+	int num_punct_marks(struct phrase* phrase);
 
 	bool node_Add(struct container* currentList, ifstream& ifst) {
 		struct node* newNode = new node;
@@ -37,6 +39,10 @@ namespace type_phrases {
 			cout << "Cannot to output phrase!" << endl;
 			return false;
 		}
-		return true;
+		else {
+			ofst << "Number of punctuation marks: " << num_punct_marks(currentNode->info) << "." << endl;
+			return true;
+		}
+		
 	}
 }
