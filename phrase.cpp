@@ -9,7 +9,6 @@ namespace type_phrases {
 		string ev;
 		string k;
 		getline(ifst, k);
-		if (k == "") return 0;
 		switch (atoi(k.c_str()))
 		{
 		case 1:
@@ -32,6 +31,8 @@ namespace type_phrases {
 			newObj = new phrase;
 			newObj->phrase = riddle_Input(ifst);
 			getline(ifst, newObj->content);
+			getline(ifst, ev);
+			newObj->eval = stoi(ev);
 			newObj->key = phrase::type::RIDDLE;
 			break;
 		default:
@@ -54,7 +55,7 @@ namespace type_phrases {
 		}
 		else if (phrase->key == phrase::type::RIDDLE) {
 			riddle_Output((riddle*)phrase->phrase, ofst);
-			ofst << "Riddle: " << phrase->content << "." << endl;
+			ofst << "Riddle: " << phrase->content << ";\n" << "Evaluetion: " << phrase->eval << "." << endl;
 			return true;
 		}
 		else {
