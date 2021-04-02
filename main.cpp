@@ -34,6 +34,7 @@ int main(int argc, char const *argv[])
     sort(c->size, c->head);
     cout << "Sorted container" << endl;
     container_Output(c, ofst);
+    cout << "Output container" << endl;
     ofst << endl;
     aphorism_Out(c, ofst);
     cout << "Output of aphorisms only" << endl;
