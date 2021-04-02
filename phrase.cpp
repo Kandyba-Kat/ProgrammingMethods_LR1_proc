@@ -45,17 +45,17 @@ namespace type_phrases {
 	bool phrase_Output(struct phrase* phrase, ofstream& ofst) {
 		if (phrase->key == phrase::type::APHORISM) {
 			aphorism_Output((aphorism*)phrase->phrase, ofst);
-			ofst << "Aphorism: " << phrase->content << ";\n" << "Evaluetion: " << phrase->eval << "." << endl;
+			ofst << "Aphorism: " << phrase->content << "\n" << "Evaluetion: " << phrase->eval << "." << endl;
 			return true;
 		}
 		else if (phrase->key == phrase::type::PROVERB) {
 			proverb_Output((proverb*)phrase->phrase, ofst);
-			ofst << "Proverb: " << phrase->content << ";\n" << "Evaluetion: " << phrase->eval << "." << endl;
+			ofst << "Proverb: " << phrase->content << "\n" << "Evaluetion: " << phrase->eval << "." << endl;
 			return true;
 		}
 		else if (phrase->key == phrase::type::RIDDLE) {
 			riddle_Output((riddle*)phrase->phrase, ofst);
-			ofst << "Riddle: " << phrase->content << ";\n" << "Evaluetion: " << phrase->eval << "." << endl;
+			ofst << "Riddle: " << phrase->content << "\n" << "Evaluetion: " << phrase->eval << "." << endl;
 			return true;
 		}
 		else {
