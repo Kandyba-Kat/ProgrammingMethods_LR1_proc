@@ -1,0 +1,47 @@
+Container contains 7 elements.
+Ñountry: abcdf;
+Proverb: abcdf
+Evaluetion: 4.
+Number of punctuation marks: 0.
+Author's name: 1234;
+Aphorism: qwerty
+Evaluetion: 4.
+Number of punctuation marks: 0.
+Author's name: aaa;
+Aphorism: aa.
+Evaluetion: 2.
+Number of punctuation marks: 1.
+Answer: !;
+Riddle: ?
+Evaluetion: 4.
+Number of punctuation marks: 1.
+Author's name: abc;
+Aphorism: c...ba!???
+Evaluetion: 8.
+Number of punctuation marks: 7.
+Ñountry: vvv;
+Proverb: nnn!!!!???
+Evaluetion: 7.
+Number of punctuation marks: 7.
+Answer: 123;
+Riddle: 456()!?,.??
+Evaluetion: 6.
+Number of punctuation marks: 8.
+
+Only aphorism.
+1: 
+2: Author's name: 1234;
+Aphorism: qwerty
+Evaluetion: 4.
+Number of punctuation marks: 0.
+3: Author's name: aaa;
+Aphorism: aa.
+Evaluetion: 2.
+Number of punctuation marks: 1.
+4: 
+5: Author's name: abc;
+Aphorism: c...ba!???
+Evaluetion: 8.
+Number of punctuation marks: 7.
+6: 
+7: 
