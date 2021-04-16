@@ -32,12 +32,20 @@ namespace type_phrases {
 
 	bool node_Output(struct node* headNode, int pos, ofstream& ofst) {
 		node* currentNode = get_node(headNode, pos);
+
 		if (!phrase_Output(currentNode->info, ofst)) {
-			cout << "Cannot to output phrase!" << endl;
+			cout << "|Cannot to output node #" << (pos+1) << "|" << endl;
 			return false;
 		}
 		else {
-			ofst << "Number of punctuation marks: " << num_punct_marks(currentNode->info) << "." << endl;
+			int check = num_punct_marks(currentNode->info);
+			if (check == -1) {
+				cout << "|Overflow of number of punctuation marks|" << endl;
+				ofst << "Overflow of number of punctuation marks." << endl;
+			}
+			else {
+				ofst << "Number of punctuation marks: " << check << "." << endl;
+			}
 			return true;
 		}
 		

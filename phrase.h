@@ -14,10 +14,11 @@ namespace type_phrases {
 		enum type { APHORISM, PROVERB, RIDDLE };
 		type key;
 		string content;
-		int eval;
+		short eval;
 		void* phrase;
 	};
 
+	string check_input_string(ifstream& ifst);
 	phrase* phrase_Input(ifstream& ifst);
 	bool phrase_Output(struct phrase* phrase, ofstream& ofst);
 } // end type_phrases namespace

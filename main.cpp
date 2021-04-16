@@ -21,28 +21,36 @@ int main(int argc, char const *argv[])
     cout << argv[2] << endl;
     ifstream ifst(argv[1]);
     if (!ifst.is_open()) {
-        cout << "File is not open!" << endl;
-        exit(1);
+        cout << "Input file is not open!" << endl;
     }
-    ofstream ofst(argv[2]);
+    else {
+        ofstream ofst(argv[2]);
+        if (!ofst.is_open())
+        {
+            cout << "Output file is not open!" << endl;
+        }
+        else {
+            cout << "Start" << endl;
+            container* c = new container;
+            container_Init(c);
+            container_Fill(c, ifst);
+            cout << "Filled container" << endl;
+            sort(c->size, c->head);
+            cout << "Sorted container" << endl;
+            container_Output(c, ofst);
+            cout << "Output container" << endl;
+            ofst << endl;
+            aphorism_Out(c, ofst);
+            cout << "Output of aphorisms only" << endl;
+            container_Clear(c);
+            cout << "Empty container" << endl;
+            container_Output(c, ofst);
+            cout << "Stop" << endl;
 
-    cout << "Start" << endl;
-    container* c = new container;
-    container_Init(c);
-    container_Fill(c, ifst);
-    cout << "Filled container" << endl;
-    sort(c->size, c->head);
-    cout << "Sorted container" << endl;
-    container_Output(c, ofst);
-    cout << "Output container" << endl;
-    ofst << endl;
-    aphorism_Out(c, ofst);
-    cout << "Output of aphorisms only" << endl;
-    container_Clear(c);
-    cout << "Empty container" << endl;
-    container_Output(c, ofst);
-    cout << "Stop" << endl;
-
+            ifst.close();
+            ofst.close();
+        }
+    }
     system("pause");
     return 0;
 }

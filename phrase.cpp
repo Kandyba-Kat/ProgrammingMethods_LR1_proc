@@ -4,42 +4,83 @@
 
 namespace type_phrases {
 
+	string check_input_string(ifstream& ifst)
+	{
+		string temp = "";
+		if (!ifst.eof()) {
+			getline(ifst, temp);
+			return temp;
+		}
+		else {
+			cout << "|Input file ended|" << endl;
+			return "0";
+		}
+	}
+
 	phrase* phrase_Input(ifstream& ifst) {
 		phrase* newObj;
-		string ev;
-		string k;
+		string ev("");
+		string k("");
 		getline(ifst, k);
-		switch (atoi(k.c_str()))
-		{
-		case 1:
-			newObj = new phrase;
-			newObj->phrase = aphorism_Input(ifst);
-			getline(ifst, newObj->content);
-			getline(ifst, ev);
-			newObj->eval = stoi(ev);
-			newObj->key = phrase::type::APHORISM;
-			break;
-		case 2:
-			newObj = new phrase;
-			newObj->phrase = proverb_Input(ifst);
-			getline(ifst, newObj->content);
-			getline(ifst, ev);
-			newObj->eval = stoi(ev);
-			newObj->key = phrase::type::PROVERB;
-			break;
-		case 3:
-			newObj = new phrase;
-			newObj->phrase = riddle_Input(ifst);
-			getline(ifst, newObj->content);
-			getline(ifst, ev);
-			newObj->eval = stoi(ev);
-			newObj->key = phrase::type::RIDDLE;
-			break;
-		default:
-			cout << "There are no such type of phrases!" << endl;
+		if (k != "") {
+			switch (atoi(k.c_str()))
+			{
+			case 1:
+				newObj = new phrase;
+				if ((newObj->phrase = aphorism_Input(ifst)) == 0) {
+					return 0;
+				}
+				if ((newObj->content = check_input_string(ifst)) == "0") {
+					return 0;
+				}
+				if ((ev = check_input_string(ifst)) == "0") {
+					return 0;
+				}
+				try {
+					newObj->eval = stoi(ev);
+					if (newObj->eval < 0 || newObj->eval > 10) {
+						cout << "|Evaluetion value is not in the range 0-10|" << endl;
+						return 0;
+					}
+				}
+				catch (invalid_argument e) {
+					cout << "|Caught Invalid Argument Exception for evaluetion|" << endl;
+					return 0;
+				}
+				newObj->key = phrase::type::APHORISM;
+				break;
+			case 2:
+				newObj = new phrase;
+				newObj->phrase = proverb_Input(ifst);
+				getline(ifst, newObj->content);
+				getline(ifst, ev);
+				newObj->eval = stoi(ev);
+				newObj->key = phrase::type::PROVERB;
+				break;
+			case 3:
+				newObj = new phrase;
+				newObj->phrase = riddle_Input(ifst);
+				getline(ifst, newObj->content);
+				getline(ifst, ev);
+				newObj->eval = stoi(ev);
+				newObj->key = phrase::type::RIDDLE;
+				break;
+			default:
+				cout << "|There are no such type of phrases|" << endl;
+				for (unsigned short i = 0; i < 3; i++) {
+					k = check_input_string(ifst);
+					if (k == "0") {
+						break;
+					}
+				}
+				return 0;
+			}
+			return newObj;
+		}
+		else {
+			cout << "|Missing an empty string|" << endl;
 			return 0;
 		}
-		return newObj;
 	}
 
 	bool phrase_Output(struct phrase* phrase, ofstream& ofst) {

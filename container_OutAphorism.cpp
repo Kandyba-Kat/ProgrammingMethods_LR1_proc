@@ -7,6 +7,11 @@
 namespace type_phrases {
 	// Вывод только афоризмов
 	void aphorism_Out(struct container* list, ofstream& ofst) {
+		if (list->size == 0) {
+			cout << "|Container output failed. It's empty|" << endl;
+			return;
+		}
+
 		node* curNode;
 		ofst << "Only aphorism." << endl;
 		for (int i = 0; i < list->size; i++) {
