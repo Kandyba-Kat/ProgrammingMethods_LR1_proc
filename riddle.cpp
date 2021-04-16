@@ -3,11 +3,18 @@
 #include "riddle.h"
 
 namespace type_phrases {
+	// сигнатура
+	string check_input_string(ifstream& ifst);
+
 	// ввод параметров загадки из файла
 	riddle* riddle_Input(ifstream& ifst) {
 		riddle* newObj = new riddle();
-		getline(ifst, newObj->answer);
-		return newObj;
+		if ((newObj->answer = check_input_string(ifst)) != "0") {
+			return newObj;
+		}
+		else {
+			return 0;
+		}
 	}
 	// вывод параметров загадки в форматируемый поток
 	void riddle_Output(struct riddle* riddle, ofstream& ofst) {

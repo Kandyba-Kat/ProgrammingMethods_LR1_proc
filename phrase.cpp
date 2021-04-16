@@ -51,18 +51,50 @@ namespace type_phrases {
 				break;
 			case 2:
 				newObj = new phrase;
-				newObj->phrase = proverb_Input(ifst);
-				getline(ifst, newObj->content);
-				getline(ifst, ev);
-				newObj->eval = stoi(ev);
+				if ((newObj->phrase = proverb_Input(ifst)) == 0) {
+					return 0;
+				}
+				if ((newObj->content = check_input_string(ifst)) == "0") {
+					return 0;
+				}
+				if ((ev = check_input_string(ifst)) == "0") {
+					return 0;
+				}
+				try {
+					newObj->eval = stoi(ev);
+					if (newObj->eval < 0 || newObj->eval > 10) {
+						cout << "|Evaluetion value is not in the range 0-10|" << endl;
+						return 0;
+					}
+				}
+				catch (invalid_argument e) {
+					cout << "|Caught Invalid Argument Exception for evaluetion|" << endl;
+					return 0;
+				}
 				newObj->key = phrase::type::PROVERB;
 				break;
 			case 3:
 				newObj = new phrase;
-				newObj->phrase = riddle_Input(ifst);
-				getline(ifst, newObj->content);
-				getline(ifst, ev);
-				newObj->eval = stoi(ev);
+				if ((newObj->phrase = riddle_Input(ifst)) == 0) {
+					return 0;
+				}
+				if ((newObj->content = check_input_string(ifst)) == "0") {
+					return 0;
+				}
+				if ((ev = check_input_string(ifst)) == "0") {
+					return 0;
+				}
+				try {
+					newObj->eval = stoi(ev);
+					if (newObj->eval < 0 || newObj->eval > 10) {
+						cout << "|Evaluetion value is not in the range 0-10|" << endl;
+						return 0;
+					}
+				}
+				catch (invalid_argument e) {
+					cout << "|Caught Invalid Argument Exception for evaluetion|" << endl;
+					return 0;
+				}
 				newObj->key = phrase::type::RIDDLE;
 				break;
 			default:
