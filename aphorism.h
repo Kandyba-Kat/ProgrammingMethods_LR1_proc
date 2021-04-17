@@ -10,7 +10,7 @@ namespace type_phrases {
 		string author;
 	};
 
-	aphorism* aphorism_Input(ifstream& ifst);
-	void aphorism_Output(struct aphorism* aphorism, ofstream& ofst);
+	aphorism* Aphorism_Input(ifstream& ifst);
+	void Aphorism_Output(struct aphorism* aphorism, ofstream& ofst);
 } // end type_phrases namespace
 #endif // APHORISM_H

@@ -4,12 +4,12 @@
 
 namespace type_phrases {
 	// сигнатура
-	string check_input_string(ifstream& ifst);
+	string Check_In_String(ifstream& ifst);
 
 	// ввод параметров загадки из файла
-	riddle* riddle_Input(ifstream& ifst) {
+	riddle* Riddle_Input(ifstream& ifst) {
 		riddle* newObj = new riddle();
-		if ((newObj->answer = check_input_string(ifst)) != "0") {
+		if ((newObj->answer = Check_In_String(ifst)) != "0") {
 			return newObj;
 		}
 		else {
@@ -17,7 +17,7 @@ namespace type_phrases {
 		}
 	}
 	// вывод параметров загадки в форматируемый поток
-	void riddle_Output(struct riddle* riddle, ofstream& ofst) {
+	void Riddle_Output(struct riddle* riddle, ofstream& ofst) {
 		ofst << "Answer: " << riddle->answer << ";" << endl;
 	}
 }

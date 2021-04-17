@@ -4,11 +4,11 @@
 
 namespace type_phrases {
 	// ñèãíàòóðà
-	string check_input_string(ifstream& ifst);
+	string Check_In_String(ifstream& ifst);
 
-	proverb* proverb_Input(ifstream& ifst) {
+	proverb* Proverb_Input(ifstream& ifst) {
 		proverb* newObj = new proverb();
-		if ((newObj->country = check_input_string(ifst)) != "0") {
+		if ((newObj->country = Check_In_String(ifst)) != "0") {
 			return newObj;
 		}
 		else {
@@ -16,7 +16,7 @@ namespace type_phrases {
 		}
 	}
 
-	void proverb_Output(struct proverb* proverb, ofstream& ofst) {
+	void Proverb_Output(struct proverb* proverb, ofstream& ofst) {
 		ofst << "Ñountry: " << proverb->country << ";" << endl;
 	}
 }

@@ -13,8 +13,8 @@ namespace type_phrases {
 		node* prev;
 	};
 
-	bool node_Add(struct container* currentList, ifstream& ifst);
-	bool node_Output(struct node* headNode, int pos, ofstream& ofst);
-	struct node* get_node(struct node* head, int index);
+	bool Node_Add(struct container* currentList, ifstream& ifst);
+	bool Node_Output(struct node* headNode, int pos, ofstream& ofst);
+	struct node* Get_Node(struct node* head, int index);
 } // end type_phrases namespace
 #endif // NODE_H

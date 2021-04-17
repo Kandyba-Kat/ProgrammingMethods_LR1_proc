@@ -8,9 +8,9 @@ namespace type_phrases {
 	// сигнатура
 	int num_punct_marks(struct phrase* phrase);
 
-	bool node_Add(struct container* currentList, ifstream& ifst) {
+	bool Node_Add(struct container* currentList, ifstream& ifst) {
 		struct node* newNode = new node;
-		newNode->info = phrase_Input(ifst);
+		newNode->info = Phrase_Input(ifst);
 		if (newNode->info == 0) {
 			delete(newNode);
 			return false;
@@ -30,10 +30,10 @@ namespace type_phrases {
 		return true;
 	}
 
-	bool node_Output(struct node* headNode, int pos, ofstream& ofst) {
-		node* currentNode = get_node(headNode, pos);
+	bool Node_Output(struct node* headNode, int pos, ofstream& ofst) {
+		node* currentNode = Get_Node(headNode, pos);
 
-		if (!phrase_Output(currentNode->info, ofst)) {
+		if (!Phrase_Output(currentNode->info, ofst)) {
 			cout << "|Cannot to output node #" << (pos+1) << "|" << endl;
 			return false;
 		}
@@ -51,7 +51,7 @@ namespace type_phrases {
 		
 	}
 
-	struct node* get_node(struct node* head, int index) {
+	struct node* Get_Node(struct node* head, int index) {
 		struct node* curNode = head;
 		for (int i = 0; i < index; i++) {
 			curNode = curNode->next;

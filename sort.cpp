@@ -10,15 +10,15 @@ namespace type_phrases {
 
 	void swap(struct node* head, int ind_first, int ind_second) {
 		struct node* temp = new node;
-		temp->info = get_node(head, ind_first)->info;
-		get_node(head, ind_first)->info = get_node(head, ind_second)->info;
-		get_node(head, ind_second)->info = temp->info;
+		temp->info = Get_Node(head, ind_first)->info;
+		Get_Node(head, ind_first)->info = Get_Node(head, ind_second)->info;
+		Get_Node(head, ind_second)->info = temp->info;
 	}
 
-	void sort(int size, struct node* head) {
+	void Sort(int size, struct node* head) {
 		for (int i = 0; i < size - 1; i++) {
 			for (int j = i+1; j < size; j++) {
-				if (compare(get_node(head, i)->info, get_node(head, j)->info)) {
+				if (compare(Get_Node(head, i)->info, Get_Node(head, j)->info)) {
 					swap(head, i, j);
 				}
 			}

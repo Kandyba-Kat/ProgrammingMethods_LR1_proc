@@ -18,21 +18,18 @@ namespace type_phrases {
 			ofst << (i+1) << ": ";
 			
             curNode = list->head;
-            for (int j = 0; j < i; j++)
-            {
+            for (int j = 0; j < i; j++) {
                 curNode = curNode->next;
             }
-            if (curNode->info->key == phrase::type::APHORISM)
-            {
-                if (!node_Output(list->head, i, ofst))
-                {
+            if (curNode->info->key == phrase::type::APHORISM) {
+                if (!Node_Output(list->head, i, ofst)) {
                     cout << "|Node #" << i << " is broken!|" << endl;
                     ofst << "Node is broken!" << endl;
                 }
             }
-            else
-                ofst << endl;
-
+			else {
+				ofst << endl;
+			}
 		}
 	}
 }

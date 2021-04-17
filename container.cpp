@@ -5,13 +5,13 @@
 
 namespace type_phrases {
 
-	void container_Init(container* list) {
+	void Container_Init(container* list) {
 		list->size = 0;
 		list->head = NULL;
 		list->tail = NULL;
 	}
 
-	void container_Clear(struct container* list) {
+	void Container_Clear(struct container* list) {
 		if (list->head == NULL) {
 			cout << "|Container cleanup failed. It's empty|" << endl;
 			return;
@@ -29,14 +29,13 @@ namespace type_phrases {
 		}
 	}
 
-	void container_Fill(struct container* list, ifstream& ifst) {
-		if (list->head != NULL)
-		{
+	void Container_Fill(struct container* list, ifstream& ifst) {
+		if (list->head != NULL) {
 			cout << "|Ñontainer filling failed. It's not empty|" << endl;
 			return;
 		}
 		while (!ifst.eof()) {
-			if (node_Add(list, ifst)) {
+			if (Node_Add(list, ifst)) {
 				(list->size)++;
 			}
 			else {
@@ -45,7 +44,7 @@ namespace type_phrases {
 		}
 	}
 
-	void container_Output(struct container* list, ofstream& ofst) {
+	void Container_Output(struct container* list, ofstream& ofst) {
 		if (list->size == 0) {
 			cout << "|Container output failed. It's empty|" << endl;
 			return;
@@ -54,7 +53,7 @@ namespace type_phrases {
 		cout << "|Container contains " << list->size << " elements|" << endl;
 
 		for (int i = 0; i < list->size; i++) {
-			if (!node_Output(list->head, i, ofst)) {
+			if (!Node_Output(list->head, i, ofst)) {
 				cout << "|Error in node #" << i << " output|" << endl;
 			}
 		}

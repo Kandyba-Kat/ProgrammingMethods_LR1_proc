@@ -10,7 +10,7 @@ namespace type_phrases {
 		string answer; // ответ
 	};
 
-	riddle* riddle_Input(ifstream& ifst);
-	void riddle_Output(struct riddle* riddle, ofstream& ofst);
+	riddle* Riddle_Input(ifstream& ifst);
+	void Riddle_Output(struct riddle* riddle, ofstream& ofst);
 } // end type_phrases namespace
 #endif // RIDDLE_H

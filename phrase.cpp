@@ -4,8 +4,7 @@
 
 namespace type_phrases {
 
-	string check_input_string(ifstream& ifst)
-	{
+	string Check_In_String(ifstream& ifst) {
 		string temp = "";
 		if (!ifst.eof()) {
 			getline(ifst, temp);
@@ -17,23 +16,22 @@ namespace type_phrases {
 		}
 	}
 
-	phrase* phrase_Input(ifstream& ifst) {
+	phrase* Phrase_Input(ifstream& ifst) {
 		phrase* newObj;
 		string ev("");
 		string k("");
 		getline(ifst, k);
 		if (k != "") {
-			switch (atoi(k.c_str()))
-			{
+			switch (atoi(k.c_str())) {
 			case 1:
 				newObj = new phrase;
-				if ((newObj->phrase = aphorism_Input(ifst)) == 0) {
+				if ((newObj->phrase = Aphorism_Input(ifst)) == 0) {
 					return 0;
 				}
-				if ((newObj->content = check_input_string(ifst)) == "0") {
+				if ((newObj->content = Check_In_String(ifst)) == "0") {
 					return 0;
 				}
-				if ((ev = check_input_string(ifst)) == "0") {
+				if ((ev = Check_In_String(ifst)) == "0") {
 					return 0;
 				}
 				try {
@@ -51,13 +49,13 @@ namespace type_phrases {
 				break;
 			case 2:
 				newObj = new phrase;
-				if ((newObj->phrase = proverb_Input(ifst)) == 0) {
+				if ((newObj->phrase = Proverb_Input(ifst)) == 0) {
 					return 0;
 				}
-				if ((newObj->content = check_input_string(ifst)) == "0") {
+				if ((newObj->content = Check_In_String(ifst)) == "0") {
 					return 0;
 				}
-				if ((ev = check_input_string(ifst)) == "0") {
+				if ((ev = Check_In_String(ifst)) == "0") {
 					return 0;
 				}
 				try {
@@ -75,13 +73,13 @@ namespace type_phrases {
 				break;
 			case 3:
 				newObj = new phrase;
-				if ((newObj->phrase = riddle_Input(ifst)) == 0) {
+				if ((newObj->phrase = Riddle_Input(ifst)) == 0) {
 					return 0;
 				}
-				if ((newObj->content = check_input_string(ifst)) == "0") {
+				if ((newObj->content = Check_In_String(ifst)) == "0") {
 					return 0;
 				}
-				if ((ev = check_input_string(ifst)) == "0") {
+				if ((ev = Check_In_String(ifst)) == "0") {
 					return 0;
 				}
 				try {
@@ -100,7 +98,7 @@ namespace type_phrases {
 			default:
 				cout << "|There are no such type of phrases|" << endl;
 				for (unsigned short i = 0; i < 3; i++) {
-					k = check_input_string(ifst);
+					k = Check_In_String(ifst);
 					if (k == "0") {
 						break;
 					}
@@ -115,19 +113,19 @@ namespace type_phrases {
 		}
 	}
 
-	bool phrase_Output(struct phrase* phrase, ofstream& ofst) {
+	bool Phrase_Output(struct phrase* phrase, ofstream& ofst) {
 		if (phrase->key == phrase::type::APHORISM) {
-			aphorism_Output((aphorism*)phrase->phrase, ofst);
+			Aphorism_Output((aphorism*)phrase->phrase, ofst);
 			ofst << "Aphorism: " << phrase->content << "\n" << "Evaluetion: " << phrase->eval << "." << endl;
 			return true;
 		}
 		else if (phrase->key == phrase::type::PROVERB) {
-			proverb_Output((proverb*)phrase->phrase, ofst);
+			Proverb_Output((proverb*)phrase->phrase, ofst);
 			ofst << "Proverb: " << phrase->content << "\n" << "Evaluetion: " << phrase->eval << "." << endl;
 			return true;
 		}
 		else if (phrase->key == phrase::type::RIDDLE) {
-			riddle_Output((riddle*)phrase->phrase, ofst);
+			Riddle_Output((riddle*)phrase->phrase, ofst);
 			ofst << "Riddle: " << phrase->content << "\n" << "Evaluetion: " << phrase->eval << "." << endl;
 			return true;
 		}

@@ -18,8 +18,8 @@ namespace type_phrases {
 		void* phrase;
 	};
 
-	string check_input_string(ifstream& ifst);
-	phrase* phrase_Input(ifstream& ifst);
-	bool phrase_Output(struct phrase* phrase, ofstream& ofst);
+	string Check_In_String(ifstream& ifst);
+	phrase* Phrase_Input(ifstream& ifst);
+	bool Phrase_Output(struct phrase* phrase, ofstream& ofst);
 } // end type_phrases namespace
 #endif // PHRASE_H

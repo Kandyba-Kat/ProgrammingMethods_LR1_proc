@@ -10,8 +10,8 @@ namespace type_phrases {
 		string country;
 	};
 
-	proverb* proverb_Input(ifstream& ifst);
-	void proverb_Output(struct proverb* proverb, ofstream& ofst);
+	proverb* Proverb_Input(ifstream& ifst);
+	void Proverb_Output(struct proverb* proverb, ofstream& ofst);
 } // end type_phrases namespace
 #endif // PROVERB_H
 

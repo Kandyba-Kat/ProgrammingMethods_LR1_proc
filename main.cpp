@@ -10,8 +10,8 @@ namespace type_phrases {
 }
 using namespace type_phrases;
 
-int main(int argc, char const *argv[])
-{
+int main(int argc, char const *argv[]) {
+
     if (argc != 3) {
         cout << "Incorrect command line!\n"
              << "Waited: command infile outfile" << endl;
@@ -25,26 +25,25 @@ int main(int argc, char const *argv[])
     }
     else {
         ofstream ofst(argv[2]);
-        if (!ofst.is_open())
-        {
+        if (!ofst.is_open()) {
             cout << "Output file is not open!" << endl;
         }
         else {
             cout << "Start" << endl;
             container* c = new container;
-            container_Init(c);
-            container_Fill(c, ifst);
+            Container_Init(c);
+            Container_Fill(c, ifst);
             cout << "Filled container" << endl;
-            sort(c->size, c->head);
+            Sort(c->size, c->head);
             cout << "Sorted container" << endl;
-            container_Output(c, ofst);
+            Container_Output(c, ofst);
             cout << "Output container" << endl;
             ofst << endl;
             aphorism_Out(c, ofst);
             cout << "Output of aphorisms only" << endl;
-            container_Clear(c);
+            Container_Clear(c);
             cout << "Empty container" << endl;
-            container_Output(c, ofst);
+            Container_Output(c, ofst);
             cout << "Stop" << endl;
 
             ifst.close();

@@ -2,6 +2,7 @@
 #define CONTAINER_H
 #include <fstream>
 #include <string>
+
 using namespace std;
 
 namespace type_phrases {
@@ -13,10 +14,10 @@ namespace type_phrases {
 		node* tail;
 	};
 
-	void container_Init(container* list);
-	void container_Clear(struct container* list);
-	void container_Fill(struct container* list, ifstream& ifst);
-	void container_Output(struct container* list, ofstream& ofst);
+	void Container_Init(container* list);
+	void Container_Clear(struct container* list);
+	void Container_Fill(struct container* list, ifstream& ifst);
+	void Container_Output(struct container* list, ofstream& ofst);
 } // end type_phrases namespace
 #endif // CONTAINER_H
 

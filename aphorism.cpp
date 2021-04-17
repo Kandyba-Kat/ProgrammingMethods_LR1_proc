@@ -4,11 +4,11 @@
 
 namespace type_phrases {
 	// сигнатура
-	string check_input_string(ifstream& ifst);
+	string Check_In_String(ifstream& ifst);
 
-	aphorism* aphorism_Input(ifstream& ifst) {
+	aphorism* Aphorism_Input(ifstream& ifst) {
 		aphorism* newObj = new aphorism();
-		if ((newObj->author = check_input_string(ifst)) != "0") {
+		if ((newObj->author = Check_In_String(ifst)) != "0") {
 			return newObj;
 		}
 		else {
@@ -16,7 +16,7 @@ namespace type_phrases {
 		}
 	}
 
-	void aphorism_Output(struct aphorism* aphorism, ofstream& ofst) {
+	void Aphorism_Output(struct aphorism* aphorism, ofstream& ofst) {
 		ofst << "Author's name: " << aphorism->author << ";" << endl;
 	}
 }
