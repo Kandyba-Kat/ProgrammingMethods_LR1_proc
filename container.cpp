@@ -4,7 +4,6 @@
 #include "node.h"
 
 namespace type_phrases {
-
 	void container_Init(container* list) {
 		list->size = 0;
 		list->head = NULL;
@@ -41,7 +40,6 @@ namespace type_phrases {
 		}
 		ofst << "Container contains " << list->size << " elements." << endl;
 		cout << "|Container contains " << list->size << " elements.|" << endl;
-
 		for (int i = 0; i < list->size; i++) {
 			if (!node_Output(list->head, i, ofst)) {
 				cout << "Error in node #" << i << " output" << endl;
