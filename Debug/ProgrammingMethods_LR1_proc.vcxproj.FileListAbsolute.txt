@@ -1,2 +1,1 @@
 C:\Users\Katya\Desktop\Study\Технологии и методы программирования\LR1\ProgrammingMethods_proc\ProgrammingMethods_LR1_proc\Debug\ProgrammingMethods_LR1_proc.exe
-C:\Users\Katya\Desktop\Study\Технологии и методы программирования\LR1\ProgrammingMethods_proc\ProgrammingMethods_LR1_proc\Debug\ProgrammingMethods_LR1_proc.pdb

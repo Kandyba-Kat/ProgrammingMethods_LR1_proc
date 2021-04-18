@@ -3,3 +3,10 @@ Author's name: hello all;
 Aphorism: goodbay everyone.
 Ñountry: good day;
 Proverb: katya.
+
+Multimethod.
+Aphorism and Proverb.
+Author's name: hello all;
+Aphorism: goodbay everyone.
+Ñountry: good day;
+Proverb: katya.

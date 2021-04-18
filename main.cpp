@@ -3,6 +3,9 @@
 #include "container.h"
 
 using namespace std;
+namespace type_phrases {
+    void MultiMethod(struct container* list, ofstream& ofst);
+}
 using namespace type_phrases;
 
 int main(int argc, char const *argv[])
@@ -27,6 +30,12 @@ int main(int argc, char const *argv[])
     container_Fill(c, ifst);
     cout << "Filled container" << endl;
     container_Output(c, ofst);
+    cout << "Output container" << endl;
+
+    ofst << endl;
+    MultiMethod(c, ofst);
+    cout << "Multimethod worked" << endl;
+
     container_Clear(c);
     cout << "Empty container" << endl;
     container_Output(c, ofst);
