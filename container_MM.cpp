@@ -12,14 +12,14 @@ namespace type_phrases {
 		node* currentNode1;
 		node* currentNode2;
 		for (int i = 0; i < list->size - 1; i++) {
-			for (int j = i + 1; j < list->size; j++) {
-				currentNode1 = list->head;
-				for (int p = 0; p < i; p++) {
-					currentNode1 = currentNode1->next;
-				}
+			currentNode1 = list->head;
+			for (int p = 0; p < i; p++) {
+				currentNode1 = currentNode1->next;
+			}
+			currentNode2 = currentNode1->next;
+			for (int j = i + 1; j < list->size; j++) {			
 				switch (currentNode1->info->key) {
 				case phrase::type::APHORISM:
-					currentNode2 = currentNode1->next;
 					switch (currentNode2->info->key) {
 					case phrase::type::APHORISM:
 						ofst << "Aphorism and Aphorism." << endl;
@@ -31,9 +31,9 @@ namespace type_phrases {
 						ofst << "Aphorism and Unknown type." << endl;
 						break;
 					}
+					currentNode2 = currentNode2->next;
 					break;
 				case phrase::type::PROVERB:
-					currentNode2 = currentNode1->next;
 					switch (currentNode2->info->key) {
 					case phrase::type::APHORISM:
 						ofst << "Proverb and Aphorism." << endl;
@@ -45,6 +45,7 @@ namespace type_phrases {
 						ofst << "Proverb and Unknown type." << endl;
 						break;
 					}
+					currentNode2 = currentNode2->next;
 					break;
 				default:
 					ofst << "Unknown type." << endl;
