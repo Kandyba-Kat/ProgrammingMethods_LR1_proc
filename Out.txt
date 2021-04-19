@@ -1,11 +1,85 @@
-Container contains 1 elements.
+Multimethod.
+	Aphorism and Proverb.
 Author's name: abc;
-Aphorism: cba
-Evaluetion: 10.
-Number of punctuation marks: 0.
+Aphorism: c...ba!???
+Evaluetion: 8.
+Number of punctuation marks: 7.
+Ñountry: vvv;
+Proverb: nnn!!!!???
+Evaluetion: 7.
+Number of punctuation marks: 7.
+	Aphorism and Riddle.
+Author's name: abc;
+Aphorism: c...ba!???
+Evaluetion: 8.
+Number of punctuation marks: 7.
+Answer: 123;
+Riddle: 456()!?,.??
+Evaluetion: 6.
+Number of punctuation marks: 8.
+	Aphorism and Aphorism.
+Author's name: abc;
+Aphorism: c...ba!???
+Evaluetion: 8.
+Number of punctuation marks: 7.
+Author's name: aaa;
+Aphorism: aa.
+Evaluetion: 2.
+Number of punctuation marks: 1.
+	Proverb and Riddle.
+Ñountry: vvv;
+Proverb: nnn!!!!???
+Evaluetion: 7.
+Number of punctuation marks: 7.
+Answer: 123;
+Riddle: 456()!?,.??
+Evaluetion: 6.
+Number of punctuation marks: 8.
+	Proverb and Aphorism.
+Ñountry: vvv;
+Proverb: nnn!!!!???
+Evaluetion: 7.
+Number of punctuation marks: 7.
+Author's name: aaa;
+Aphorism: aa.
+Evaluetion: 2.
+Number of punctuation marks: 1.
+	Riddle and Aphorism.
+Answer: 123;
+Riddle: 456()!?,.??
+Evaluetion: 6.
+Number of punctuation marks: 8.
+Author's name: aaa;
+Aphorism: aa.
+Evaluetion: 2.
+Number of punctuation marks: 1.
+
+Container contains 4 elements.
+Author's name: aaa;
+Aphorism: aa.
+Evaluetion: 2.
+Number of punctuation marks: 1.
+Ñountry: vvv;
+Proverb: nnn!!!!???
+Evaluetion: 7.
+Number of punctuation marks: 7.
+Author's name: abc;
+Aphorism: c...ba!???
+Evaluetion: 8.
+Number of punctuation marks: 7.
+Answer: 123;
+Riddle: 456()!?,.??
+Evaluetion: 6.
+Number of punctuation marks: 8.
 
 Only aphorism.
-1: Author's name: abc;
-Aphorism: cba
-Evaluetion: 10.
-Number of punctuation marks: 0.
+1: Author's name: aaa;
+Aphorism: aa.
+Evaluetion: 2.
+Number of punctuation marks: 1.
+2: 
+3: Author's name: abc;
+Aphorism: c...ba!???
+Evaluetion: 8.
+Number of punctuation marks: 7.
+4: 
